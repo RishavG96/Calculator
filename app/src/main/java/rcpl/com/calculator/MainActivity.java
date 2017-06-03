@@ -16,42 +16,43 @@ import android.widget.ToggleButton;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    String s,s1,s2;
-    int i,i1;
-    int result;
+    String s, s1, s2;
+    int i, i1;
+    int result,flag=0;
     RelativeLayout rl;
     ToggleButton tb;
     EditText et;
-    TextView tv1,tv2;
-    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17;
+    TextView tv1, tv2;
+    Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rl=(RelativeLayout)findViewById(R.id.rl);
-        tb=(ToggleButton)findViewById(R.id.toggleButton2);
-        et=(EditText)findViewById(R.id.editText2);
-        tv1=(TextView)findViewById(R.id.textView4);
-        tv2=(TextView)findViewById(R.id.textView5);
-        b1=(Button)findViewById(R.id.button5);
-        b2=(Button)findViewById(R.id.button22);
-        b3=(Button)findViewById(R.id.button23);
-        b4=(Button)findViewById(R.id.button24);
-        b5=(Button)findViewById(R.id.button25);
-        b6=(Button)findViewById(R.id.button26);
-        b7=(Button)findViewById(R.id.button27);
-        b8=(Button)findViewById(R.id.button28);
-        b9=(Button)findViewById(R.id.button29);
-        b10=(Button)findViewById(R.id.button30);
-        b11=(Button)findViewById(R.id.button31);
-        b12=(Button)findViewById(R.id.button32);
-        b13=(Button)findViewById(R.id.button33);
-        b14=(Button)findViewById(R.id.button34);
-        b15=(Button)findViewById(R.id.button35);
-        b16=(Button)findViewById(R.id.button36);
-        b17=(Button)findViewById(R.id.button37);
+        rl = (RelativeLayout) findViewById(R.id.rl);
+        tb = (ToggleButton) findViewById(R.id.toggleButton2);
+        et = (EditText) findViewById(R.id.editText2);
+        tv1 = (TextView) findViewById(R.id.textView4);
+        tv2 = (TextView) findViewById(R.id.textView5);
+        b1 = (Button) findViewById(R.id.button5);
+        b2 = (Button) findViewById(R.id.button22);
+        b3 = (Button) findViewById(R.id.button23);
+        b4 = (Button) findViewById(R.id.button24);
+        b5 = (Button) findViewById(R.id.button25);
+        b6 = (Button) findViewById(R.id.button26);
+        b7 = (Button) findViewById(R.id.button27);
+        b8 = (Button) findViewById(R.id.button28);
+        b9 = (Button) findViewById(R.id.button29);
+        b10 = (Button) findViewById(R.id.button30);
+        b11 = (Button) findViewById(R.id.button31);
+        b12 = (Button) findViewById(R.id.button32);
+        b13 = (Button) findViewById(R.id.button33);
+        b14 = (Button) findViewById(R.id.button34);
+        b15 = (Button) findViewById(R.id.button35);
+        b16 = (Button) findViewById(R.id.button36);
+        b17 = (Button) findViewById(R.id.button37);
         tb.setOnClickListener(this);
         et.setOnClickListener(this);
         tv2.setOnClickListener(this);
@@ -95,12 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==tb.getId())
-        {
-            if(tb.isChecked())
-            {
+        if (v.getId() == tb.getId()) {
+            if (tb.isChecked()) {
                 et.setText("");
                 tv2.setText("");
+                flag=0;
+                s1="";
+                s="";
                 rl.setBackgroundColor(Color.LTGRAY);
                 et.setVisibility(View.VISIBLE);
                 tv2.setVisibility(View.VISIBLE);
@@ -121,9 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 b15.setVisibility(View.VISIBLE);
                 b16.setVisibility(View.VISIBLE);
                 b17.setVisibility(View.VISIBLE);
-            }
-            else
-            {
+            } else {
                 rl.setBackgroundResource(R.drawable.thinking);
                 et.setVisibility(View.INVISIBLE);
                 tv2.setVisibility(View.INVISIBLE);
@@ -146,112 +146,162 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 b17.setVisibility(View.INVISIBLE);
             }
         }
-        if(v.getId()==b1.getId())
-        {
+        if (v.getId() == b1.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b1.getText().toString());
+            et.setText(et.getText().toString() + b1.getText().toString());
         }
-        if(v.getId()==b2.getId())
-        {
+        if (v.getId() == b2.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b2.getText().toString());
+            et.setText(et.getText().toString() + b2.getText().toString());
         }
-        if(v.getId()==b3.getId())
-        {
+        if (v.getId() == b3.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b3.getText().toString());
+            et.setText(et.getText().toString() + b3.getText().toString());
         }
-        if(v.getId()==b5.getId())
-        {
+        if (v.getId() == b5.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b5.getText().toString());
+            et.setText(et.getText().toString() + b5.getText().toString());
         }
-        if(v.getId()==b6.getId())
-        {
+        if (v.getId() == b6.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b6.getText().toString());
+            et.setText(et.getText().toString() + b6.getText().toString());
         }
-        if(v.getId()==b7.getId())
-        {
+        if (v.getId() == b7.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b7.getText().toString());
+            et.setText(et.getText().toString() + b7.getText().toString());
         }
-        if(v.getId()==b9.getId())
-        {
+        if (v.getId() == b9.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b9.getText().toString());
+            et.setText(et.getText().toString() + b9.getText().toString());
         }
-        if(v.getId()==b10.getId())
-        {
+        if (v.getId() == b10.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b10.getText().toString());
+            et.setText(et.getText().toString() + b10.getText().toString());
         }
-        if(v.getId()==b11.getId())
-        {
+        if (v.getId() == b11.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b11.getText().toString());
+            et.setText(et.getText().toString() + b11.getText().toString());
         }
-        if(v.getId()==b14.getId())
-        {
+        if (v.getId() == b14.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b14.getText().toString());
+            et.setText(et.getText().toString() + b14.getText().toString());
         }
-        if(v.getId()==b15.getId())
-        {
+        if (v.getId() == b15.getId()) {
             tv2.setText("");
-            et.setText(et.getText().toString()+b15.getText().toString());
+            et.setText(et.getText().toString() + b15.getText().toString());
         }
-        if(v.getId()==b16.getId())
-        {
-            s=et.getText().toString();
-            i=Integer.parseInt(s);
-            et.setText("");
-            s1="+";
+        if (v.getId() == b16.getId()) {
+            if (et.getText().toString().equals("")&& s=="") {
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                flag=1;
+            }
+            else if(!et.getText().toString().equals("")&&s!="")
+            {
+                Toast.makeText(this, "Only 2 numbers at a time!", Toast.LENGTH_SHORT).show();
+            }
+            else if(s1=="+"||s1=="-"||s1=="*"||s1=="/"||s1=="%")
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s = et.getText().toString();
+                i = Integer.parseInt(s);
+                et.setText("");
+                s1 = "+";
+            }
         }
-        if(v.getId()==b17.getId())
-        {
-            s=et.getText().toString();
-            i=Integer.parseInt(s);
-            et.setText("");
-            s1="-";
+        if (v.getId() == b17.getId()) {
+            if (et.getText().toString().equals("")&&s=="") {
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                flag=1;
+            }
+            else if(!et.getText().toString().equals("")&&s!="")
+            {
+                Toast.makeText(this, "Only 2 numbers at a time!", Toast.LENGTH_SHORT).show();
+            }
+            else if(s1=="+"||s1=="-"||s1=="*"||s1=="/"||s1=="%")
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s = et.getText().toString();
+                i = Integer.parseInt(s);
+                et.setText("");
+                s1 = "-";
+            }
         }
-        if(v.getId()==b4.getId())
-        {
-            s=et.getText().toString();
-            i=Integer.parseInt(s);
-            et.setText("");
-            s1="*";
+        if (v.getId() == b4.getId()) {
+            if (et.getText().toString().equals("")&& s=="") {
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                flag=1;
+            }
+            else if(!et.getText().toString().equals("")&&s!="")
+            {
+                Toast.makeText(this, "Only 2 numbers at a time!", Toast.LENGTH_SHORT).show();
+            }
+            else if(s1=="+"||s1=="-"||s1=="*"||s1=="/"||s1=="%")
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s = et.getText().toString();
+                i = Integer.parseInt(s);
+                et.setText("");
+                s1 = "*";
+            }
         }
-        if(v.getId()==b8.getId())
-        {
-            s=et.getText().toString();
-            i=Integer.parseInt(s);
-            et.setText("");
-            s1="/";
+        if (v.getId() == b8.getId()) {
+            if (et.getText().toString().equals("")&&s=="") {
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                flag=1;
+            }
+            else if(!et.getText().toString().equals("")&&s!="")
+            {
+                Toast.makeText(this, "Only 2 numbers at a time!", Toast.LENGTH_SHORT).show();
+            }
+            else if(s1=="+"||s1=="-"||s1=="*"||s1=="/"||s1=="%")
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s = et.getText().toString();
+                i = Integer.parseInt(s);
+                et.setText("");
+                s1 = "/";
+            }
         }
-        if(v.getId()==b12.getId())
-        {
-            s=et.getText().toString();
-            i=Integer.parseInt(s);
-            et.setText("");
-            s1="%";
+        if (v.getId() == b12.getId()) {
+            if (et.getText().toString().equals("")&&s=="") {
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                flag=1;
+            }
+            else if((!et.getText().toString().equals(""))&&s!="")
+            {
+                Toast.makeText(this, "Only 2 numbers at a time!", Toast.LENGTH_SHORT).show();
+            }
+            else if(s1=="+"||s1=="-"||s1=="*"||s1=="/"||s1=="%")
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s = et.getText().toString();
+                i = Integer.parseInt(s);
+                et.setText("");
+                s1 = "%";
+
+            }
         }
-        if(v.getId()==b13.getId())
-        {
-            s2=et.getText().toString();
-            i1=Integer.parseInt(s2);
-            et.setText("");
-            if(s1=="+")
-                result=i+i1;
-            else if(s1=="-")
-                result=i-i1;
-            else if(s1=="*")
-                result=i*i1;
-            else if(s1=="/")
-                result=i/i1;
-            else if(s1=="%")
-                result=i%i1;
-            tv2.setText("The result is:  "+result);
+        if (v.getId() == b13.getId()) {
+            if (et.getText().toString().equals("")&&s=="")
+                Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+            else if(et.getText().toString().equals(""))
+                Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
+            else {
+                s2 = et.getText().toString();
+                i1 = Integer.parseInt(s2);
+                et.setText("");
+                if (s1 == "+")
+                    result = i + i1;
+                else if (s1 == "-")
+                    result = i - i1;
+                else if (s1 == "*")
+                    result = i * i1;
+                else if (s1 == "/")
+                    result = i / i1;
+                else if (s1 == "%")
+                    result = i % i1;
+                tv2.setText("The result is:  " + result);
+            }
+            }
         }
     }
-}
