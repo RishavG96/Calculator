@@ -194,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (et.getText().toString().equals("")&& s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
                 flag=1;
+                tv2.setText("");
             }
             else if(!et.getText().toString().equals("")&&s!="")
             {
@@ -212,6 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (et.getText().toString().equals("")&&s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
                 flag=1;
+                tv2.setText("");
             }
             else if(!et.getText().toString().equals("")&&s!="")
             {
@@ -230,6 +232,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (et.getText().toString().equals("")&& s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
                 flag=1;
+                tv2.setText("");
             }
             else if(!et.getText().toString().equals("")&&s!="")
             {
@@ -248,6 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (et.getText().toString().equals("")&&s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
                 flag=1;
+                tv2.setText("");
             }
             else if(!et.getText().toString().equals("")&&s!="")
             {
@@ -266,6 +270,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (et.getText().toString().equals("")&&s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
                 flag=1;
+                tv2.setText("");
             }
             else if((!et.getText().toString().equals(""))&&s!="")
             {
@@ -282,8 +287,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         if (v.getId() == b13.getId()) {
-            if (et.getText().toString().equals("")&&s=="")
+            if (et.getText().toString().equals("")&&s=="") {
                 Toast.makeText(this, "Enter number first!", Toast.LENGTH_SHORT).show();
+                tv2.setText("");
+            }
             else if(et.getText().toString().equals(""))
                 Toast.makeText(this, "Enter second number now!", Toast.LENGTH_SHORT).show();
             else {
@@ -300,7 +307,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     result = i / i1;
                 else if (s1 == "%")
                     result = i % i1;
+                else if(s1=="")
+                    result=i1;
                 tv2.setText("The result is:  " + result);
+                s1="";
+                s="";
+                s2="";
             }
             }
         }
