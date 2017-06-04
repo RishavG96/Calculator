@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,21 +20,21 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     String s, s1, s2;
-    int i, i1;
+    int i, i1,count=0;
     int result,flag=0;
     RelativeLayout rl;
     ToggleButton tb;
     EditText et;
     TextView tv1, tv2;
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17;
-
+    ProgressBar pb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rl = (RelativeLayout) findViewById(R.id.rl);
-        tb = (ToggleButton) findViewById(R.id.toggleButton2);
         et = (EditText) findViewById(R.id.editText2);
+        tb=(ToggleButton)findViewById(R.id.toggleButton2);
         tv1 = (TextView) findViewById(R.id.textView4);
         tv2 = (TextView) findViewById(R.id.textView5);
         b1 = (Button) findViewById(R.id.button5);
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b15 = (Button) findViewById(R.id.button35);
         b16 = (Button) findViewById(R.id.button36);
         b17 = (Button) findViewById(R.id.button37);
+        pb=(ProgressBar)findViewById(R.id.progressBar);
         tb.setOnClickListener(this);
         et.setOnClickListener(this);
         tv2.setOnClickListener(this);
@@ -313,6 +315,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 s1="";
                 s="";
                 s2="";
+                count++;
+                pb.setProgress(count*10);
+                if(pb.getProgress()==70)
+                    Toast.makeText(this,"3 opearions left!",Toast.LENGTH_SHORT).show();
+                if(pb.getProgress()==80)
+                    Toast.makeText(this,"2 opearions left!",Toast.LENGTH_SHORT).show();
+                if(pb.getProgress()==90)
+                    Toast.makeText(this,"1 opearions left!",Toast.LENGTH_SHORT).show();
+                if(pb.getProgress()==100)
+                {
+                    Toast.makeText(this,"You have reached the limit of 10 operations!No more operation allowed",Toast.LENGTH_LONG).show();
+                    tv1.setVisibility(View.INVISIBLE);
+                    tb.setVisibility(View.INVISIBLE);
+                    et.setVisibility(View.INVISIBLE);
+                    tv2.setVisibility(View.INVISIBLE);
+                    b1.setVisibility(View.INVISIBLE);
+                    b2.setVisibility(View.INVISIBLE);
+                    b3.setVisibility(View.INVISIBLE);
+                    b4.setVisibility(View.INVISIBLE);
+                    b5.setVisibility(View.INVISIBLE);
+                    b6.setVisibility(View.INVISIBLE);
+                    b7.setVisibility(View.INVISIBLE);
+                    b8.setVisibility(View.INVISIBLE);
+                    b9.setVisibility(View.INVISIBLE);
+                    b10.setVisibility(View.INVISIBLE);
+                    b11.setVisibility(View.INVISIBLE);
+                    b12.setVisibility(View.INVISIBLE);
+                    b13.setVisibility(View.INVISIBLE);
+                    b14.setVisibility(View.INVISIBLE);
+                    b15.setVisibility(View.INVISIBLE);
+                    b16.setVisibility(View.INVISIBLE);
+                    b17.setVisibility(View.INVISIBLE);
+                }
             }
             }
         }
